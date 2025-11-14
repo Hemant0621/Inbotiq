@@ -2,6 +2,10 @@
 
 A full-stack web application with role-based authentication (User/Admin) built with Next.js, Express, and MongoDB.
 
+# AI used :
+- Cursor 
+- chatgpt
+
 ## Features
 
 - ✅ Role-based signup and login (User/Admin)
@@ -102,7 +106,7 @@ npm install
 
 3. Create a `.env.local` file (copy from `.env.example`):
 ```bash
-NEXT_PUBLIC_API_URL=http://localhost:4000
+BACKEND_API_URL=http://localhost:4000
 ```
 
 4. Start the development server:
@@ -184,57 +188,6 @@ Authorization: Bearer <token>
 }
 ```
 
-## Deployment
-
-### Backend Deployment (Render/Railway)
-
-1. Push your code to GitHub
-2. Connect your repository to Render or Railway
-3. Set environment variables:
-   - `PORT` (usually auto-set by platform)
-   - `MONGODB_URI` (your MongoDB Atlas connection string)
-   - `JWT_SECRET` (a secure random string)
-   - `CORS_ORIGIN` (your frontend URL, e.g., `https://your-app.vercel.app`)
-
-4. Set build command: `npm install`
-5. Set start command: `npm start`
-
-### Frontend Deployment (Vercel/Netlify)
-
-#### Vercel
-1. Push your code to GitHub
-2. Import your repository in Vercel
-3. Set environment variable:
-   - `NEXT_PUBLIC_API_URL` (your backend URL, e.g., `https://your-backend.onrender.com`)
-4. Deploy
-
-#### Netlify
-1. Push your code to GitHub
-2. Import your repository in Netlify
-3. Set build command: `npm run build`
-4. Set publish directory: `.next`
-5. Set environment variable:
-   - `NEXT_PUBLIC_API_URL` (your backend URL)
-
-## Environment Variables
-
-### Backend (.env)
-- `PORT` - Server port (default: 4000)
-- `MONGODB_URI` - MongoDB connection string
-- `JWT_SECRET` - Secret key for JWT signing
-- `CORS_ORIGIN` - Allowed CORS origin(s), comma-separated
-
-### Frontend (.env.local)
-- `NEXT_PUBLIC_API_URL` - Backend API URL
-
-## Usage
-
-1. Visit the home page at `http://localhost:3000`
-2. Click "Sign up" to create an account
-3. Select a role (User or Admin) during signup
-4. After signup, you'll be redirected to the dashboard
-5. The dashboard displays: "Welcome, [Name] (User)" or "Welcome, [Name] (Admin)"
-6. You can logout and login again using your credentials
 
 ## Security Features
 
@@ -243,8 +196,4 @@ Authorization: Bearer <token>
 - Protected routes require valid authentication
 - CORS configured for security
 - Input validation with Zod schemas
-
-## License
-
-ISC
 
