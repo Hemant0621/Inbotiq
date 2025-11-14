@@ -1,5 +1,5 @@
 export const API_BASE_URL =
-  process.env.BACKEND_API_URL?.replace(/\/$/, "") || "http://localhost:4000";
+  process.env.NEXT_PUBLIC_BACKEND_API_URL?.replace(/\/$/, "") || "http://localhost:4000";
 
 export type UserRole = "user" | "admin";
 
