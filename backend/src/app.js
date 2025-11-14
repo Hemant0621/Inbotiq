@@ -4,32 +4,7 @@ const authRouter = require('./routes/auth');
 
 const app = express();
 
-const parseOrigins = () => {
-  const raw = process.env.CORS_ORIGIN;
-
-  if (!raw) {
-    return ['http://localhost:3000'];
-  }
-
-  return raw
-    .split(',')
-    .map((origin) => origin.trim())
-    .filter(Boolean);
-};
-
-const allowedOrigins = parseOrigins();
-
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin) || allowedOrigins.includes('*')) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-  })
-);
+app.use(cors());
 
 app.use(express.json());
 
